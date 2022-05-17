@@ -14,7 +14,11 @@
             }
             return null;
         }
+        encoded = getUrlParam('encoded')
         url = getUrlParam('url')
+        if (encoded == 'true') {
+            url = decodeURIComponent(url)
+        }
         if (url != null) {
             location.href = url
         }
